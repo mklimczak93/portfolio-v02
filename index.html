@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Magdalena Klimczak - Portfolio</title>
+    <!-- responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <!-- GSAP ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- BARBA - unpkg -->
+    <script src="https://unpkg.com/@barba/core"></script>
+
+    <!-- BARBA - jsdelivr -->
+    <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+
+    <!-- Lenis.js Smooth Scrolling -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script> 
+
+    <!-- JS -->
+    <script src="/main.js"></script>
+
+    <!-- CSS -->
+    <link href="/styles.css" rel="stylesheet">
+
+    <!-- add icon link-->
+    <link rel="icon"
+    type="image/x-icon"
+    href="/assets/logos/Logo MK - black.svg">
+
+
+</head>
+<body>
+    <!-- Navbar-->
+    <div class="nav">
+        <a href="" data-cursor="pointer2">
+            <img class="navbar-logo" src="assets/logos/Logo MK - black.svg">
+        </a>
+        <div class="hor-line"></div>
+        <div class="main-menu">
+            <a class="navbar-link" href="#projects" data-cursor="pointer2">Projects</a>
+            <a class="navbar-link" href="#skills" data-cursor="pointer2">Skills</a>
+            <a class="navbar-link" href="#contact" data-cursor="pointer2">Contact</a>
+        </div>
+    </div>
+
+    <!-- Home -->
+    <div class="section" id="home">
+        <div class="outline-text-div fname">
+            <div class="outline-container">
+                <img class="outline-text" src="assets/text_outlines/Text outline - Magdalena.svg">
+                <img class="outline-text" src="assets/text_outlines/Text outline - Magdalena.svg">
+            </div>
+            <div class="outline-container">
+                <img class="outline-text" src="assets/text_outlines/Text outline - Magdalena.svg">
+                <img class="outline-text" src="assets/text_outlines/Text outline - Magdalena.svg">
+            </div>
+            <div class="outline-container">
+                <img class="outline-text" src="assets/text_outlines/Text outline - Magdalena.svg">
+                <img class="outline-text" src="assets/text_outlines/Text outline - Magdalena.svg">
+            </div>
+        </div>
+        <div class="outline-text-div lname">
+            <div class="outline-container2">
+                <img class="outline-text" src="assets/text_outlines/Text outline - Klimczak.svg">
+                <img class="outline-text" src="assets/text_outlines/Text outline - Klimczak.svg">
+            </div>
+            <div class="outline-container2">
+                <img class="outline-text" src="assets/text_outlines/Text outline - Klimczak.svg">
+                <img class="outline-text" src="assets/text_outlines/Text outline - Klimczak.svg">
+            </div>
+            <div class="outline-container2">
+                <img class="outline-text" src="assets/text_outlines/Text outline - Klimczak.svg">
+                <img class="outline-text" src="assets/text_outlines/Text outline - Klimczak.svg">
+            </div>
+        </div>
+        <div class="main-title-div">
+            <h1 class="main-title" id="main-title">Front-end developer</h1>
+        </div>
+        
+    </div>
+
+    <!-- Projects -->
+    <div class="sub-section" id="projects">
+        <div class="overlay">
+            <h2 class="main-title sub-title" id="projects-title">Projects</h2>
+        </div>
+
+        <!-- <div class="project-preview" id="project-01">
+            <p class="project-number">01</p>
+            <div class="project-title-div">
+                <h3 class="project-title">WineCellar</h3>
+                <div class="tools-div">
+                    <p class="tool-name">JavaScript</p>
+                    <p class="tool-name">React.js</p>
+                    <p class="tool-name">Node.js</p>
+                    <p class="tool-name">MongoDB</p>
+                </div>
+            </div>
+            <img class="open-project-icon" src="assets/icons/icon-upload.svg">
+        </div>
+
+        <div class="project-preview" id="project-01">
+            <p class="project-number">01</p>
+            <div class="project-title-div">
+                <h3 class="project-title">WineCellar</h3>
+                <div class="tools-div">
+                    <p class="tool-name">JavaScript</p>
+                    <p class="tool-name">React.js</p>
+                    <p class="tool-name">Node.js</p>
+                    <p class="tool-name">MongoDB</p>
+                </div>
+            </div>
+            <img class="open-project-icon" src="assets/icons/icon-upload.svg">
+        </div>
+
+        <div class="project-preview" id="project-01">
+            <p class="project-number">01</p>
+            <div class="project-title-div">
+                <h3 class="project-title">WineCellar</h3>
+                <div class="tools-div">
+                    <p class="tool-name">JavaScript</p>
+                    <p class="tool-name">React.js</p>
+                    <p class="tool-name">Node.js</p>
+                    <p class="tool-name">MongoDB</p>
+                </div>
+            </div>
+            <img class="open-project-icon" src="assets/icons/icon-upload.svg">
+        </div>
+
+        <div class="project-preview" id="project-01">
+            <p class="project-number">04</p>
+            <div class="project-title-div">
+                <h3 class="project-title">WineCellar</h3>
+                <div class="tools-div">
+                    <p class="tool-name">JavaScript</p>
+                    <p class="tool-name">React.js</p>
+                    <p class="tool-name">Node.js</p>
+                    <p class="tool-name">MongoDB</p>
+                </div>
+            </div>
+            <img class="open-project-icon" src="assets/icons/icon-upload.svg">
+        </div> -->
+
+        <!-- <img class="preview-image" src="assets/projects_photos/WineCellar/01. Home page.JPG"> -->
+    </div>
+
+    <!-- Skills -->
+    <div class="sub-section" id="skills">
+        <div class="overlay">
+            <h2 class="main-title sub-title" id="skills-title">Skills</h2>
+        </div>
+        <div class="skills-content">
+            <div class="skills-div-subgroup">
+                <h3 class="skills-subtitle">Languages, frameworks, libraries</h3>
+                <div class="hor-line2"></div>
+                <p>JavaScript, TypeScript</p>
+                <p>React.js</p>
+                <p>Node.js, Express.js</p>
+                <p>Mongo.DB, Mongoose, Atlas</p>
+                <p>HTML, CSS</p>
+                <p>GSAP, Barba.js</p>
+                <p>React Testing Library, Jest</p>
+                <p>Python</p>
+                <p>Django</p>
+            </div>
+            <div class="skills-div-subgroup">
+                <h3 class="skills-subtitle">Tools</h3>
+                <div class="hor-line2"></div>
+                <p>Git</p>
+                <p>Chrome Developers Tools, Lighthouse</p>
+                <p>Adobe Photoshop, Illustrator</p>
+                <p>Affinity Designer</p>
+                <p>Figma</p>
+                <p>Visual Studio Code</p>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Contact -->
+    <div class="sub-section" id="contact">
+        <div class="contact-div">
+            <img class="outline-text contact" src="assets/text_outlines/Text outline - Contact.svg">
+            <h2 class="main-title">Magda Klimczak</h2>
+            <a href="mailto:magdalena.b.klimczak@gmail.com" class="regular-button contact-button" data-cursor="pointer2">Contact</a>
+        </div>  
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+        <p class="footer-text">© Magdalena Klimczak 2024</p>
+        <div class="footer-socials">
+            <a class="footer-icon-link" href="https://github.com/mklimczak93/" target="_blank" data-cursor="pointer2">
+                <img class="footer-icon" src="assets/icons/icon-github.svg">
+            </a>
+            <a class="footer-icon-link" href="/assets/pdfs/Klimczak Magdalena - CV ENG ONLINE.pdf" target="_blank" data-cursor="pointer2">
+                <img class="footer-icon" src="assets/icons/icon-cv.svg">
+            </a>
+            <a class="footer-icon-link" href="https://www.linkedin.com/in/magdalena-klimczak-418440170" target="_blank" data-cursor="pointer2">
+                <img class="footer-icon" src="assets/icons/icon-linkedin.svg">
+            </a>
+        </div>
+    </div>
+
+    <!-- Circle cursor -->
+    <div id="cursor"></div>
+    <div id="cursor-border"></div>
+
+
+
+    
+</body>
+</html>

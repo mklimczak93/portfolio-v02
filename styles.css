@@ -1,0 +1,552 @@
+/* ---------------------------------------------------------------------------- */
+/* --- --- --- --- --- --- --- --- --- BASE --- --- --- --- --- --- --- --- --- */
+/* ---------------------------------------------------------------------------- */
+
+/* --- custom font --- */
+@font-face {
+    font-family: "Humane";
+    src: url('assets/fonts/Humane-Bold.otf') format("opentype");;
+    font-weight: bold;
+}
+
+/* @font-face {
+    font-family: "Humane";
+    src: url('./assets/fonts/Humane-SemiBold.otf') format("opentype");;
+    font-weight: semi-bold;
+}
+
+@font-face {
+    font-family: "Humane";
+    src: url('./assets/fonts/Humane-Medium.otf') format("opentype");;
+    font-weight: medium;
+}
+
+@font-face {
+    font-family: "Humane";
+    src: url('./assets/fonts/Humane-Regular.otf') format("opentype");;
+    font-weight: regular;
+}
+
+@font-face {
+    font-family: "Humane";
+    src: url('./assets/fonts/Humane-Thin.otf') format("opentype");;
+    font-weight: thin;
+}
+
+@font-face {
+    font-family: "Humane";
+    src: url('./assets/fonts/Humane-Light.otf') format("opentype");;
+    font-weight: light;
+} */
+
+@font-face {
+    font-family: "Articulat";
+    src: url('./assets/fonts/ArticulatCF-Bold.otf') format("opentype");;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Articulat";
+    src: url('./assets/fonts/ArticulatCF-Regular.otf') format("opentype");;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Articulat";
+    src: url('./assets/fonts/ArticulatCF-Medium.otf') format("opentype");;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Articulat";
+    src: url('./assets/fonts/ArticulatCF-Light.otf') format("opentype");;
+    font-weight: light;
+}
+
+:root {
+    --main-background: #CDC7C2;
+    --main-text-color:#21242C;
+    --title-font: 7rem "Humane", 'sans-serif';
+    --paragraph-font: normal 14px 'Articulat', 'sans-serif';
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --main-background: #21242C;
+        --main-text-color: #CDC7C2;
+    } 
+}
+
+
+/* ------------------------------------------------------------------------------------- */
+/* --- --- --- --- --- --- --- --- --- MAIN ELEMENTS --- --- --- --- --- --- --- --- --- */
+/* ------------------------------------------------------------------------------------- */
+
+html {
+    color-scheme: light dark;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background: var(--main-background);
+	color: var(--main-text-color);
+    cursor: none;
+    /*cursor: url('./assets/icons/icon-cursor-black.svg'), auto;*/
+}
+#cursor {
+    position: fixed;
+    top: -5px;
+    left: -5px;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 999;
+  }
+  
+  #cursor-border {
+    --size: 50px;
+    position: fixed;
+    top: calc(var(--size) / -2);
+    left: calc(var(--size) / -2);
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px white;
+    pointer-events: none;
+    transition: top 0.15s ease-out, left 0.15s ease-out, width 0.15s ease-out,
+      height 0.15s ease-out, background-color 0.15s ease-out;
+    z-index: 999;
+  }
+
+p {
+    font: var(--paragraph-font);
+    color: var(--main-text-color);
+    letter-spacing: 1px;
+    margin: 0px;
+    padding: 0px;
+}
+h1, h2, h3, h6{
+    margin: 0px;
+    padding: 0px;
+}
+
+[data-theme="light"] {
+    color-scheme: light;
+    --main-background: #CDC7C2;
+    --main-text-color:#21242C;
+}
+[data-theme="dark"] {
+    color-scheme: dark;
+    --main-background: #21242C;
+    --main-text-color: #CDC7C2;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.sub-section {
+    /* margin for navbar */
+    padding: 50px;
+    padding-top: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    min-height: calc(100svh - 110px);
+}
+/* ------------------------------------------------------------------------------ */
+/* --- --- --- --- --- --- --- --- --- NAVBAR --- --- --- --- --- --- --- --- --- */
+/* ------------------------------------------------------------------------------ */
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* positioning always up-top */
+    position: sticky;
+    top: 0px;
+    z-index: 4;
+    background-color: var(--main-background);
+}
+
+.navbar-logo {
+    height: 70px;
+    width: auto;
+    margin: 20px;
+    object-fit: contain;
+}
+.hor-line {
+    flex-grow: 3;
+    border-bottom: 1px solid var(--main-text-color);
+    margin: 20px;
+}
+.navbar-link {
+    text-decoration: none;
+    color: var(--main-text-color);
+    font: var(--paragraph-font);
+    letter-spacing: 1px;
+    margin: 20px;
+}
+
+
+/* ---------------------------------------------------------------------------- */
+/* --- --- --- --- --- --- --- --- --- HOME --- --- --- --- --- --- --- --- --- */
+/* ---------------------------------------------------------------------------- */
+
+
+#home {
+    position: relative;
+    height: calc(100svh - 110px);
+}
+
+.outline-text {
+    /* half the screen minus margin */
+    width: calc(50svw - 30px);
+    height:auto;
+    left: 0px;
+    margin: 0 15px;
+}
+.outline-text-div {
+    display: flex;
+}
+.outline-container, .outline-container2 {
+    display: flex;
+}
+.fname {
+}
+.lname {
+
+}
+
+
+
+.main-title {
+    font: var(--title-font);
+    color: var(--main-text-color);
+    text-transform: uppercase;
+    padding: 0px;
+    margin: 0px;
+}
+.single-letter, .single-letter2 {
+    position: relative;
+    top: 7rem;
+}
+.main-title-div {
+    /* height: 8rem;
+    width: 40svw; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    position: absolute;
+    top: calc(50% - 3.5rem);
+    left: calc(50% - 20svw);
+    overflow: hidden;
+}
+.sub-title {
+    font-size: 5rem;
+    margin-bottom: 30px;
+}
+.overlay {
+    overflow: hidden;
+    align-self: flex-start;
+}
+
+/* ----------------------------------------------------------------------------------------- */
+/* --- --- --- --- --- --- --- --- --- PROJECTS PREVIEWS --- --- --- --- --- --- --- --- --- */
+/* ----------------------------------------------------------------------------------------- */
+#projects {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.project-preview {
+    width: 100%;
+    padding: 10px 0px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border-top: 1px solid var(--main-text-color);
+    position: relative;
+    right: 0;
+    transform: translateX(0);
+    opacity: 1;
+}
+.project-preview:last-child {
+    border-bottom: 1px solid var(--main-text-color);
+}
+
+.project-number {
+    font: var(--paragraph-font);
+    font-size: 32px;
+    font-weight: light;
+    padding-right: 30px;
+    margin: 10px;
+
+}
+
+.project-title-div {
+
+}
+
+.project-title {
+    font-family: 'Articulat';
+    font-weight: 500;
+    letter-spacing: 5px;
+    font-size: 32px;
+    margin: 10px;
+}
+
+.tools-div {
+    display: flex;
+}
+
+.tool-name {
+    font-size: 10px;
+    border: 0.5px solid var(--main-text-color);
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 5px;
+}
+.open-project-icon {
+    height: 20px;
+    width: 20px;
+    object-fit: contain;
+    justify-self: end;
+    margin: 10px;
+    position: absolute;
+    right: 0px;
+}
+.preview-image {
+    display: none;
+    height: 250px;
+    width: 550px;
+    object-fit: cover;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    top: 125px;
+}
+
+.project-preview:hover {
+    cursor: pointer;
+    .project-title, .project-number {
+        font-weight: bold;
+    }
+    .preview-image {
+        display: flex;
+    }
+}
+
+/* ------------------------------------------------------------------------------ */
+/* --- --- --- --- --- --- --- --- --- SKILLS --- --- --- --- --- --- --- --- --- */
+/* ------------------------------------------------------------------------------ */
+#skills {
+    /* height: calc(100svh - 110px); */
+    align-items: flex-start;
+}
+.skills-content {
+    display: flex;
+    gap: 60px;
+}
+.skills-subtitle {
+    font: var(--paragraph-font);
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.hor-line2 {
+    align-self: flex-start;
+    display: flex;
+    margin: 0px 0px 10px 0px;
+    width: 100%;
+    border-bottom: 1.5px solid var(--main-text-color);
+}
+.skills-div-subgroup {
+    width: 40svw;
+    margin-bottom: 70px;
+}
+.skills-div-subgroup p {
+    font: var(--paragraph-font);
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+/* ------------------------------------------------------------------------------- */
+/* --- --- --- --- --- --- --- --- --- CONTACT --- --- --- --- --- --- --- --- --- */
+/* ------------------------------------------------------------------------------- */
+#contact {
+    height: calc(100svh - 110px);
+    position: relative;
+}
+.contact-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.contact-div h2 {
+    position: absolute;
+    top: calc(50%-2.5rem)
+}
+/* this is for contact image with additional class .outline-text */
+.contact {
+    height: 60svh;
+    width: auto;
+}
+.regular-button {
+    color: white;
+    background-color: var(--main-text-color);
+    outline: none;
+    border: none;
+    text-decoration: none;
+    font: var(--paragraph-font);
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 20px;
+    padding: 10px 90px;
+    margin-top: 40px;
+    cursor: none; 
+    transition: 0.5s;
+}
+.regular-button:hover {
+    padding: 10px 120px;
+}
+.contact-button {
+    position: absolute;
+    margin-top: 40px;
+    top: 60%;
+}
+
+
+/* ------------------------------------------------------------------------------ */
+/* --- --- --- --- --- --- --- --- --- FOOTER --- --- --- --- --- --- --- --- --- */
+/* ------------------------------------------------------------------------------ */
+#footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    bottom: 0px;
+    padding: 20px;
+    border-top: 1px solid var(--main-text-color);
+}
+
+.footer-text {
+}
+
+.footer-socials {
+
+}
+
+.footer-icon {
+    height: 20px;
+    width: 20px;
+    object-fit: contain;
+    margin-left: 10px
+}
+.footer-icon-link {
+    text-decoration: none;
+}
+
+/* -------------------------------------------------------------------------------------------- */
+/* --- --- --- --- --- --- --- --- --- ACTUAL PROJECTS PAGE --- --- --- --- --- --- --- --- --- */
+/* -------------------------------------------------------------------------------------------- */
+
+.project-info {
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0px 100px;
+    padding-top: 40px;
+    position: relative;
+}
+.project-info .outline-text-div {
+    position: relative;
+}
+.project-info .main-title-div {
+    position: absolute;
+    top: calc(100% - 6rem);
+    left: 0;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.project-info .main-title {
+    font-size: 5rem;
+}
+.project-info .tools-div {
+    margin-top: 30px;
+}
+.project-info .outline-text {
+    width: calc(33svw - 10px);
+    margin: 0 5px;
+}
+
+.paragraph {
+    font: var(--paragraph-font);
+    margin: 30px 0px 30px 0px;
+    max-width: 50svw;
+}
+.sub-title-number {
+    margin: 0px 0px 5px 0px;
+}
+
+.project-main-image {
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    align-self: center;
+}
+
+/* also regular-button */
+.page-visit {
+    align-self: center;
+    margin: 100px 0px;
+}
+
+
+
+/* ------------------------------------------------------------------------------ */
+/* --- --- --- --- --- --- --- --- --- OTHERS --- --- --- --- --- --- --- --- --- */
+/* ------------------------------------------------------------------------------ */
+
+
+/* --- SCROLLBAR --- */
+
+/* width */
+::-webkit-scrollbar {
+    width: 0px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+  background: transparent;
+  background-clip: padding-box;
+  margin-top: 60px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+  background: var(--main-text-color);
+  background-clip: padding-box;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+  background: #908397;
+  border-right: 5px solid rgba(0, 0, 0, 0);
+  border-bottom: 10px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  }
+  
+  
+  /* --- INSPECTIONS --- */
+  /* * {
+    outline: 1px solid #f00 !important;
+  } */

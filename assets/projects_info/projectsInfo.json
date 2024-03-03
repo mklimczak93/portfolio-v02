@@ -1,0 +1,130 @@
+[
+        {
+            "id": 1,
+            "projectName": "WineCellar",
+            "projectNameSplitted": "Wine.Cellar",
+            "projectOneLiner": "Wine collection application",
+            "projectTools": ["React.js", "Node.js", "JavaScript", "MongoDB", "HTML", "CSS"],
+            "projectDescription": "A virtual wine cellar application that allows user to store wine information & photos in their private online cellar, as well as search the web for best prices of chosen wine using custom wine finder tool.",
+            "projectFunctionalities": 
+                [
+                    "Creating user profile,",
+                    "Creating personal cellar - a collection of wines,",
+                    "Adding newly discovered wines to cellar - with photos and detailed information,",
+                    "Viewing details of chosen wine,",
+                    "Using the wine finder tools allowing for searching & comparing chosen wine prices in online wine stores."
+                ],
+            "projectBuiltWith": 
+                [
+                    "MongoDB + Mongoose + Atlas,",
+                    "React + React Router,",
+                    "Node.js + Express.js,",
+                    "HTML + CSS,",
+                    "Puppeteer",
+                    "JWT, .env & Multer."
+                ],
+            "projectGithubLink": "https://github.com/mklimczak93/the-wine-cellar-public",
+            "projectYoutubeLink": "https://youtu.be/id2rgIQr38Y",
+            "imagesSourceFolder": "assets/project_photos/WineCellar"
+        },
+        {
+            "id": 2,
+            "projectName": "FlexFit",
+            "projectNameSplitted": "Flex.Fit",
+            "projectOneLiner": "Flexible sport classes booking app",
+            "projectTools": ["JavaScript", "Python", "Django", "HTML5", "CSS3"],
+            "projectDescription": "Flexfit is a sport classes booking application - inspired by ClassPass, an app that I have used often while living in Amsterdam and found it missing back in Warsaw. It is a platform offering its services to both everyday sport enjoyers and sport studio owners. On one hand it allows to search for the sport classes offered in the area, on the other hand – to promote various activities presented by the studios. It was built from scratch, both frontend and backend, as a final assignment for the CS50WEB.",
+            "projectFunctionalities": 
+                [   
+                    [
+                        "Creating a user profile",
+                        "Finding classes in the area,",
+                        "Viewing detailed description of the class & its rating,",
+                        "Signing up for classes,",
+                        "Viewing their own calendar,",
+                        "Rating classes they have been to,",
+                        "Choosing subscription plan,",
+                        "Using the platform subscription plan to pay for the classes."
+                    ],
+                    [
+                        "Creating studio profile,",
+                        "Offering classes to the platform users,",
+                        "Adding description & information of the classes,",
+                        "Viewing list of offered classes,",
+                        "Viewing ratings given by the users,",
+                        "Seeing the list of sign-uped users,",
+                        "Receive funds from the sign-ups."
+                    ]
+                    
+                ],
+            "projectBuiltWith": 
+                [
+                    "Django,",
+                    "Python,",
+                    "JavaScript",
+                    "HTML + CSS,",
+                    "TomTomAPI"
+                ],
+            "projectGithubLink": "https://github.com/mklimczak93/flexfit.git",
+            "projectYoutubeLink": "https://youtu.be/Ed9B-PfPLDM",
+            "imagesSourceFolder": "assets/project_photos/Flexfit"
+        },
+        {
+            "id": 3,
+            "projectName": "MinWin",
+            "projectNameSplitted": "Min.Win",
+            "projectOneLiner": "Vintage furniture bidding app",
+            "projectTools": ["Python", "Django", "HTML5", "CSS3"],
+            "projectDescription": "Vintage furniture e-commerce auction site that allows users to post auction listings, place bids on listings, comment on those listings, and add listings to a watchlist.",
+            "projectFunctionalities": 
+                [
+                    "Creating user profile,",
+                    "Viewing  furniture available for bidding,",
+                    "Viewing specific category of furniture,",
+                    "Viewing details of given item,",
+                    "Bidding,",
+                    "Commenting",
+                    "Creating personal watchlist."
+                ],
+            "projectBuiltWith": 
+                [
+                    "Django,",
+                    "Python,",
+                    "HTML + CSS,",
+                    "Bootstrap."
+                ],
+            "projectGithubLink": "https://github.com/mklimczak93/minwin.git",
+            "projectYoutubeLink": "https://youtu.be/XOX7TVuVSpI",
+            "imagesSourceFolder": "assets/project_photos/Minwin"
+        },
+        {
+            "id": 4,
+            "projectName": "Runner",
+            "projectNameSplitted": "Run.ner",
+            "projectOneLiner": "Social network app for runners",
+            "projectTools": ["JavaScript", "Python", "Django", "HTML5", "CSS3"],
+            "projectDescription": "An online network platform for running enthusiasts allowing for following and interacting with people sharing the same interest in the sport.",
+            "projectFunctionalities": 
+                [
+                    "Creating user profile,",
+                    "Connecting with others interested in running through a social network app,",
+                    "Following others' feeds,",
+                    "Viewing posts, photos and achievements of followed people,",
+                    "Adding own posts and photos,",
+                    "Liking posts,",
+                    "Commenting on own/others' posts,",
+                    "Editing own profile."
+                ],
+            "projectBuiltWith": 
+                [
+                    "Django,",
+                    "Python,",
+                    "JavaScript",
+                    "HTML + CSS,",
+                    "Bootstrap."
+                ],
+            "projectGithubLink": "https://github.com/mklimczak93/runner.git",
+            "projectYoutubeLink": "https://youtu.be/fnG5GaX7XxQ",
+            "imagesSourceFolder": "assets/project_photos/Runner"
+        }
+]

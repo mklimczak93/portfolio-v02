@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Magdalena Klimczak - Portfolio</title>
+    <!-- responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <!-- GSAP ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- BARBA - unpkg -->
+    <script src="https://unpkg.com/@barba/core"></script>
+
+    <!-- BARBA - jsdelivr -->
+    <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+
+    <!-- Lenis.js Smooth Scrolling -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script> 
+
+    <!-- JS -->
+    <script src="/main.js"></script>
+
+    <!-- CSS -->
+    <link href="/styles.css" rel="stylesheet">
+
+    <!-- add icon link-->
+    <link rel="icon"
+    type="image/x-icon"
+    href="/assets/logos/Logo MK - black.svg">
+
+
+</head>
+<body>
+    <!-- Navbar-->
+    <div class="nav">
+        <a href="index.html" data-cursor="pointer2">
+            <img class="navbar-logo" src="assets/logos/Logo MK - black.svg">
+        </a>
+        <div class="hor-line"></div>
+        <div class="main-menu">
+            <a class="navbar-link" href="index.html#projects" data-cursor="pointer2">Projects</a>
+            <a class="navbar-link" href="index.html#skills" data-cursor="pointer2">Skills</a>
+            <a class="navbar-link" href="index.html#contact" data-cursor="pointer2">Contact</a>
+        </div>
+    </div>
+
+    <!-- PROJECT INFO -->
+    <div class="sub-section project-info">
+
+        <div class="outline-text-div">
+            <div class="outline-container">
+                <img class="outline-text" src="assets/text_outlines/Text outline - Winecellar.svg">
+            </div>
+            <div class="outline-container">
+                <img class="outline-text" src="assets/text_outlines/Text outline - Winecellar.svg">
+            </div>
+            <div class="outline-container">
+                <img class="outline-text" src="assets/text_outlines/Text outline - Winecellar.svg">
+            </div>
+            <div class="outline-container">
+                <img class="outline-text" src="assets/text_outlines/Text outline - Winecellar.svg">
+            </div>
+            <div class="main-title-div">
+                <p class="paragraph sub-title-number">Project 01</p>
+                <h1 class="main-title" id="main-title">WineCellar</h1>
+            </div>
+        </div>
+        <!-- <p class="paragraph">Project 01</p> -->
+        <div class="tools-div">
+            <p class="tool-name">JavaScript</p>
+            <p class="tool-name">React.js</p>
+            <p class="tool-name">Node.js</p>
+            <p class="tool-name">MongoDB</p>
+        </div>
+        <p class="paragraph">A virtual wine cellar application that allows user to store wine information & photos in their private online cellar, as well as search the web for best prices of chosen wine using custom wine finder tool.</p>
+        <img class="project-main-image" src="./assets/projects_photos/WineCellar/winecellar_overview.png">
+        <p class="paragraph">Main functionalities of the application:</p>
+        <p class="paragraph">
+                    "Creating user profile,",
+                    "Creating personal cellar - a collection of wines,",
+                    "Adding newly discovered wines to cellar - with photos and detailed information,",
+                    "Viewing details of chosen wine,",
+                    "Using the wine finder tools allowing for searching & comparing chosen wine prices in online wine stores."
+        </p>
+        <video width="100%" height="auto" autoplay loop playsinline muted>
+            <source src="/assets/projects_photos/WineCellar/wine_cellar_preview_movie.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <a href="" class="regular-button page-visit" data-cursor="pointer2">Github source code</a>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+        <p class="footer-text">© Magdalena Klimczak 2024</p>
+        <div class="footer-socials">
+            <a class="footer-icon-link" href="https://github.com/mklimczak93/" target="_blank" data-cursor="pointer2">
+                <img class="footer-icon" src="assets/icons/icon-github.svg">
+            </a>
+            <a class="footer-icon-link" href="/assets/pdfs/Klimczak Magdalena - CV ENG ONLINE.pdf" target="_blank" data-cursor="pointer2">
+                <img class="footer-icon" src="assets/icons/icon-cv.svg">
+            </a>
+            <a class="footer-icon-link" href="https://www.linkedin.com/in/magdalena-klimczak-418440170" target="_blank" data-cursor="pointer2">
+                <img class="footer-icon" src="assets/icons/icon-linkedin.svg">
+            </a>
+        </div>
+    </div>
+
+        <!-- Circle cursor -->
+        <div id="cursor"></div>
+        <div id="cursor-border"></div>
+
+
+
+    
+</body>
+</html>
