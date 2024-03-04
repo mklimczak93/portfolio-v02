@@ -150,6 +150,8 @@ h1, h2, h3, h6{
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    /* slightly bigger height for animation in later section */
+    min-height: 100svh;
 }
 .sub-section {
     /* margin for navbar */
@@ -160,6 +162,28 @@ h1, h2, h3, h6{
     align-items: center;
     justify-self: center;
     min-height: calc(100svh - 110px);
+    overflow-x: hidden;
+}
+.mobile-only {
+    display: none;
+}
+
+  /* Medium devices / tablets 770 - 1030 width*/
+  @media only screen and (max-width: 1030px) {
+    
+  }
+  /* Medium devices / tablets 770 - 1030 width*/
+  @media only screen and (max-width: 1030px) {
+    .sub-section {
+        min-height: 60svh;
+    }
+  }
+
+/* Small devices (phones, 500px and down) */
+@media only screen and (max-width: 500px) {
+    .mobile-only {
+        display: block;
+    }
 }
 /* ------------------------------------------------------------------------------ */
 /* --- --- --- --- --- --- --- --- --- NAVBAR --- --- --- --- --- --- --- --- --- */
@@ -195,6 +219,71 @@ h1, h2, h3, h6{
     margin: 20px;
 }
 
+/* HAMBURGER MENU */
+.hamburger {
+    display: none;
+}
+.hamburger .line{
+    width: 50px;
+    height: 5px;
+    background-color: var(--main-text-color);
+    display: block;
+    margin: 8px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .hamburger:hover{
+    cursor: pointer;
+  }
+
+  #hamburger-1.is-active .line:nth-child(2){
+    opacity: 0;
+  }
+  
+  #hamburger-1.is-active .line:nth-child(1){
+    -webkit-transform: translateY(13px) rotate(45deg);
+    -ms-transform: translateY(13px) rotate(45deg);
+    -o-transform: translateY(13px) rotate(45deg);
+    transform: translateY(13px) rotate(45deg);
+  }
+  
+  #hamburger-1.is-active .line:nth-child(3){
+    -webkit-transform: translateY(-13px) rotate(-45deg);
+    -ms-transform: translateY(-13px) rotate(-45deg);
+    -o-transform: translateY(-13px) rotate(-45deg);
+    transform: translateY(-13px) rotate(-45deg);
+  }
+
+  /* Medium devices / tablets 770 - 1030 width*/
+@media only screen and (max-width: 1030px) {
+
+}
+/* Medium devices / tablets 500px - 770px */
+@media only screen and (max-width: 770px) {
+
+}
+/* Small devices (phones, 500px and down) */
+@media only screen and (max-width: 500px) {
+    .nav {
+        display: grid;
+        grid-template-columns: 2fr 3fr 1fr;
+    }
+    .hamburger {
+        display: block;
+        margin: 20px;
+    }
+    .main-menu {
+        grid-column: 1 /  4;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hor-line {
+        border-bottom: 3px solid var(--main-background);
+    }
+}
 
 /* ---------------------------------------------------------------------------- */
 /* --- --- --- --- --- --- --- --- --- HOME --- --- --- --- --- --- --- --- --- */
@@ -219,14 +308,6 @@ h1, h2, h3, h6{
 .outline-container, .outline-container2 {
     display: flex;
 }
-.fname {
-}
-.lname {
-
-}
-
-
-
 .main-title {
     font: var(--title-font);
     color: var(--main-text-color);
@@ -236,18 +317,19 @@ h1, h2, h3, h6{
 }
 .single-letter, .single-letter2 {
     position: relative;
+    margin-right: 5px;
     top: 7rem;
 }
 .main-title-div {
-    /* height: 8rem;
-    width: 40svw; */
+    /* height: 8rem; */
+    width: 70svw; 
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 3;
     position: absolute;
     top: calc(50% - 3.5rem);
-    left: calc(50% - 20svw);
+    left: calc(50% - 35svw);
     overflow: hidden;
 }
 .sub-title {
@@ -257,6 +339,26 @@ h1, h2, h3, h6{
 .overlay {
     overflow: hidden;
     align-self: flex-start;
+}
+
+  /* Medium devices / tablets 770 - 1030 width*/
+  @media only screen and (max-width: 1030px) {
+    .outline-text {
+        height: 300px;
+        width: auto;
+        margin: 0 15px;
+    }
+    #home .outline-text:nth-child(2) {
+        display: none;
+    }
+  }
+
+  /* Small devices (phones, 500px and down) */
+@media only screen and (max-width: 500px) {
+    .main-title {
+        text-align: center;
+    }
+    
 }
 
 /* ----------------------------------------------------------------------------------------- */
@@ -346,6 +448,41 @@ h1, h2, h3, h6{
     }
 }
 
+.splitted-text1, .splitted-text2 {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+  /* Small devices (phones, 500px and down) */
+  @media only screen and (max-width: 500px) {
+    .sub-section {
+         padding: 20px;
+    }
+    .project-preview {
+        height: fit-content;
+    }
+    .project-number {
+        font-size: 24px;
+        margin: 5px;
+    }
+    .project-title-div {
+        display: flex;
+        flex-direction: column;
+    }
+    .project-title {
+        letter-spacing: 5px;
+        font-size: 24px;
+        margin: 5px;
+    }
+    .tools-div {
+        margin: 10px 0px;
+        flex-wrap: wrap;
+        height: fit-content;
+    }
+    .tools-div p {
+        display: flex;
+    }
+}
+
 /* ------------------------------------------------------------------------------ */
 /* --- --- --- --- --- --- --- --- --- SKILLS --- --- --- --- --- --- --- --- --- */
 /* ------------------------------------------------------------------------------ */
@@ -380,6 +517,16 @@ h1, h2, h3, h6{
     letter-spacing: 1px;
     margin-bottom: 15px;
 }
+
+  @media only screen and (max-width: 500px) {
+    .skills-content {
+        flex-direction: column;
+        gap: 0px;
+    }
+    .skills-div-subgroup {
+        width: 100%;
+    }
+  }
 /* ------------------------------------------------------------------------------- */
 /* --- --- --- --- --- --- --- --- --- CONTACT --- --- --- --- --- --- --- --- --- */
 /* ------------------------------------------------------------------------------- */
@@ -389,13 +536,15 @@ h1, h2, h3, h6{
 }
 .contact-div {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
 }
-.contact-div h2 {
+.contact-div .overlay {
     position: absolute;
-    top: calc(50%-2.5rem)
+    top: calc(50% - 2.5rem);
+    left: calc(50% - 14rem);
 }
 /* this is for contact image with additional class .outline-text */
 .contact {
@@ -403,6 +552,8 @@ h1, h2, h3, h6{
     width: auto;
 }
 .regular-button {
+    width: fit-content;
+    align-self: center;
     color: white;
     background-color: var(--main-text-color);
     outline: none;
@@ -425,7 +576,23 @@ h1, h2, h3, h6{
     margin-top: 40px;
     top: 60%;
 }
-
+  /* Medium devices / tablets 770 - 1030 width*/
+  @media only screen and (max-width: 1030px) {
+    #contact { 
+        height: 60svh;
+    }
+    /* additional settings for outline text in contact section */
+    .contact {
+        width: 90svw;
+        height: auto;
+    }
+    .contact-div {
+        flex-direction: column;
+    }
+    #contact .main-title {
+        font-size: 5rem;
+    }
+  }
 
 /* ------------------------------------------------------------------------------ */
 /* --- --- --- --- --- --- --- --- --- FOOTER --- --- --- --- --- --- --- --- --- */
@@ -459,13 +626,21 @@ h1, h2, h3, h6{
 /* -------------------------------------------------------------------------------------------- */
 /* --- --- --- --- --- --- --- --- --- ACTUAL PROJECTS PAGE --- --- --- --- --- --- --- --- --- */
 /* -------------------------------------------------------------------------------------------- */
-
+/* initially this div is not visible */
+#project-full-info {
+    display: none;
+}
 .project-info {
     justify-content: flex-start;
     align-items: flex-start;
-    margin: 0px 100px;
+    margin: 0px;
     padding-top: 40px;
     position: relative;
+}
+.project-main-information {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 50px;
 }
 .project-info .outline-text-div {
     position: relative;
@@ -487,11 +662,23 @@ h1, h2, h3, h6{
     width: calc(33svw - 10px);
     margin: 0 5px;
 }
+#functionalities-div {
+    padding: 0px;
+    margin-bottom: 50px;
+}
 
 .paragraph {
     font: var(--paragraph-font);
     margin: 30px 0px 30px 0px;
     max-width: 50svw;
+}
+#functionalities-div p {
+    margin: 10px 0px 10px 0px;
+}
+.bolder {
+    font-weight: bold;
+    margin-bottom: 0px;
+    margin-top: 50px;
 }
 .sub-title-number {
     margin: 0px 0px 5px 0px;
@@ -510,6 +697,40 @@ h1, h2, h3, h6{
     margin: 100px 0px;
 }
 
+/* Medium devices / tablets 770 - 1030 width*/
+@media only screen and (max-width: 1030px) {
+    .paragraph {
+        max-width: 100%;
+    }
+    .project-info .tools-div {
+        margin-top: 0px;
+    }
+    
+    .project-info .outline-text {
+        width: calc(66svw - 5px);
+        margin: 0 5px;
+    }
+    .project-info .main-title-div {
+        top: calc(80% - 6rem);
+        left: 25px;
+    }
+}
+/* Small devices (phones, 500px and down) */
+@media only screen and (max-width: 500px) {
+    .project-main-information {
+        margin: 0px 20px;
+    }
+    .project-info .regular-button {
+        font-size: 14px;
+        padding: 10px 60px;
+    }
+    .project-info .outline-text {
+        width: calc(100svw - 5px);
+    }
+    .project-info .main-title-div {
+        top: calc(70% - 6rem);
+    }
+}
 
 
 /* ------------------------------------------------------------------------------ */
