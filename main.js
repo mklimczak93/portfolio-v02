@@ -1,13 +1,13 @@
-// --- LENNIS
+// --- LENNIS --- //
 const lenis = new Lenis()
 
 lenis.on('scroll', (e) => {
-  //console.log(e)
+//console.log(e)
 })
 
 function raf(time) {
-  lenis.raf(time)
-  requestAnimationFrame(raf)
+lenis.raf(time)
+requestAnimationFrame(raf)
 }
 
 requestAnimationFrame(raf)
@@ -91,6 +91,137 @@ window.addEventListener('DOMContentLoaded', () => {
     };
   });
 
+  // --- ANIMATIONS FUNCTIONS
+
+function textDropMain(mainId, duration) {
+    let elementToSplit = document.getElementById(mainId);
+    if (elementToSplit) {
+        const contentText = elementToSplit.innerText;
+        elementToSplit.innerHTML = contentText.split("").map((el)=>`<span class="single-letter">${el}</span>`).join("");
+    }
+    let timeline = gsap.timeline({defaults: {duration: duration}})
+    timeline.to('.single-letter', {
+        top: 0,
+        stagger: 0.075
+    })
+    
+}
+
+function textDrop(mainId, duration, viewSectionId) {
+    let elementToSplit = document.getElementById(mainId);
+    if (elementToSplit) {
+        const contentText = elementToSplit.innerText;
+        if (contentText) {
+            elementToSplit.innerHTML = contentText.split("").map((el)=>`<span class="single-letter2">${el}</span>`).join("");
+        }
+        ScrollTrigger.batch('.single-letter2', {
+            start: "-100px bottom",
+            onEnter: elements => gsap.to(elements, {top: 0, stagger: 0.075}),
+            //onLeaveBack: elements => gsap.set(elements, {top: 0, opacity: 0, overwrite: true})
+          });
+        // let timeline = gsap.timeline({defaults: {ease: "power4.in", duration: duration}})
+        // timeline.to('.single-letter2', {
+        //     //y: 20,
+        //     top: 0,
+        //     stagger: 0.075,
+        //     scrollTrigger: {
+        //         trigger: viewSectionId, 
+        //         start: "=+200 bottom",
+        //         end: "=+500 bottom",
+        //         scrub: false,
+        //         markers: true,
+        //     }
+        // })
+    }
+}
+
+function projectPreviewSlide(className, duration, viewSectionId) {
+    let projectElements = document.getElementsByClassName(className);
+    if (projectElements) {
+        ScrollTrigger.batch(`.${className}`, {
+            markers: false,
+            start: "top-=100px bottom",
+            end: "bottom+=500px bottom",
+            onEnter: elements => gsap.from(elements, {xPercent: -100, opacity:0, stagger: 0.5}),
+            //onLeaveBack: elements => gsap.from(elements, {xPercent: -100, opacity:0, stagger: 0.075})
+          });
+        // gsap.from(className, {
+        //     ease: "power4.inOut",
+        //     duration: duration,
+        //     xPercent: -100,
+        //     stagger: 0.5,
+        //     opacity: 0,
+        //     scrollTrigger: {
+        //         trigger: viewSectionId, 
+        //         start: "top bottom",
+        //         end: "bottom bottom",
+        //         scrub: false,
+        //         markers: false,
+        //     }
+        // })
+    }
+    
+}
+
+function horizontalLoop(textClass, direction) {
+    const element = document.querySelectorAll(textClass)[0]
+    if (element) {
+        const elementWidth = element.offsetWidth;
+        const screenWidth = window.screen.width;
+        const speed = 100;
+        const percentageMovement = direction * (-100)
+    
+        let tween = gsap.to(textClass, 
+            {
+                xPercent: percentageMovement, 
+                repeat: -1, 
+                duration: 10, 
+                ease: "linear"
+            }).totalProgress(0.5);
+                
+    }
+}
+function splitOnHover(divId) {
+    const hoverableDiv = document.getElementById(divId);
+    if (hoverableDiv) {
+        //number splitting
+        let numberElement = document.getElementById(`project-number-${divId}`);
+        const numberContent = numberElement.innerHTML;
+        const numberEl01 = `<span class="splitted-text1">${numberContent.split('')[0]}</span>`;
+        const numberEl02 = `<span class="splitted-text2">${numberContent.split('')[1]}</span>`;
+        numberElement.innerHTML = numberEl01 + numberEl02;
+        //numberElement.innerHTML = numberContent.split('').map((el)=>`<span class="splitted-text">${el}</span>`).join("");
+        
+        //title splitting
+        let titleElement = document.getElementById(`project-title-${divId}`);
+        const splitPattern = titleElement.dataset.split;
+        const nameEl01 = `<span class="splitted-text1">${splitPattern.split('.')[0]}</span>`;
+        const nameEl02 = `<span class="splitted-text2">${splitPattern.split('.')[1]}</span>`;
+        titleElement.innerHTML = nameEl01 + nameEl02;
+        //titleElement.innerHTML = splitPattern.split('.').map((el)=>`<span class="splitted-text">${el}</span>`).join("");
+        
+
+
+        if (numberElement, titleElement) {
+            //down to up
+            gsap.set('.splitted-text1', {'clip-path': 'polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)'})
+            gsap.to('.splitted-text1', {'clip-path': 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)', duration: 0.5})
+            //up to down
+            gsap.set('.splitted-text2', {'clip-path': 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)'})
+            gsap.to('.splitted-text2', {'clip-path': 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)', duration: 0.5})
+
+        }
+    }
+        
+    
+}
+function unsplitOnHover(divId, projectName, projectNumber) {
+    let numberElement = document.getElementById(`project-number-${divId}`);
+    numberElement.innerHTML = "0" + projectNumber;
+    let titleElement = document.getElementById(`project-title-${divId}`);
+    titleElement.innerHTML = projectName;
+}
+
 // --- OPEN MAIN PAGE ---//
 function openMainPage(section) {
     if (document.getElementById('project-full-info').style.display === "flex") {
@@ -105,9 +236,8 @@ function openMainPage(section) {
 };
 
 
-// --- PROJECTS PAGES
+// --- PROJECT DETAILED PAGE
 function openProjectPage(project) {
-    console.log(project);
     //const NewWindow = window.open('./project.html',"_self");
     //NewWindow.onload = () => {}
     document.getElementById('home').style.display = "none";
@@ -118,7 +248,6 @@ function openProjectPage(project) {
     const mainDiv = document.getElementById('project-full-info');
     mainDiv.style.display = "flex";
     window.scrollTo(0, 0);
-    console.log(mainDiv);
 
     if (mainDiv) {
         //create Title Div
@@ -223,6 +352,7 @@ function openProjectPage(project) {
     
 }
 
+// --- PROJECT PREVIEWS --- //
 window.addEventListener('DOMContentLoaded', async () => {
     let response = await fetch('./assets/projects_info/projectsInfo.json')
     let projectList = await response.json();
@@ -232,15 +362,17 @@ window.addEventListener('DOMContentLoaded', async () => {
         const projectPreviewsElements = await projectList.map((project) => {
             let newDiv = document.createElement('div');
             newDiv.className = "project-preview";
-            newDiv.id = `project-${project.id}`;
+            newDiv.id = project.id;
             newDiv.setAttribute('data-cursor', 'pointer2');
-            newDiv.onclick = () => {openProjectPage(project)} 
+            newDiv.onclick = () => {openProjectPage(project)}
+            newDiv.onmouseenter = () => {splitOnHover(project.id)}
+            newDiv.onmouseleave = () => {unsplitOnHover(project.id, project.projectName, project.id)}
             
             newDiv.innerHTML = 
             `
-                <p class="project-number">0${project.id}</p>
+                <p class="project-number" id="project-number-${project.id}">0${project.id}</p>
                 <div class="project-title-div" data-cursor="pointer2">
-                    <h3 class="project-title">${project.projectName}</h3>
+                    <h3 class="project-title" id="project-title-${project.id}" data-split="${project.projectNameSplitted}">${project.projectName}</h3>
                     <div class="tools-div" id="${project.id}-tools-div">
                        
                     </div>
@@ -261,98 +393,24 @@ window.addEventListener('DOMContentLoaded', async () => {
     
         }
         );
-        console.log(projectsPreviewsContainer)
     }
-   
+
+    //animations
+    projectPreviewSlide('project-preview', 2, '#projects');
+    
     
 
 })
 
-// --- ANIMATIONS FUNCTIONS
 
-function textDropMain(mainId, duration) {
-    let elementToSplit = document.getElementById(mainId);
-    if (elementToSplit) {
-        const contentText = elementToSplit.innerText;
-        elementToSplit.innerHTML = contentText.split("").map((el)=>`<span class="single-letter">${el}</span>`).join("");
-    }
-    let timeline = gsap.timeline({defaults: {ease: "power4.in", duration: duration}})
-    timeline.to('.single-letter', {
-        top: 0,
-        stagger: 0.075
-    })
-    
-}
-
-function textDrop(mainId, duration, viewSectionId) {
-    let elementToSplit = document.getElementById(mainId);
-    if (elementToSplit) {
-        const contentText = elementToSplit.innerText;
-        if (contentText) {
-            elementToSplit.innerHTML = contentText.split("").map((el)=>`<span class="single-letter2">${el}</span>`).join("");
-        }
-        let timeline = gsap.timeline({defaults: {ease: "power4.in", duration: duration}})
-        timeline.to('.single-letter2', {
-            //y: 20,
-            top: 0,
-            stagger: 0.075,
-            scrollTrigger: {
-                trigger: viewSectionId, 
-                start: "top bottom",
-                end: "=+300 bottom",
-                scrub: true,
-                markers: false,
-            }
-        })
-    }
-}
-
-function projectPreviewSlide(className, duration, viewSectionId) {
-    let projectElements = document.getElementsByClassName(className);
-    if (projectElements) {
-        gsap.from(className, {
-            ease: "power4.inOut",
-            duration: duration,
-            xPercent: -100,
-            stagger: 0.5,
-            opacity: 0,
-            scrollTrigger: {
-                trigger: viewSectionId, 
-                start: "top bottom",
-                end: "bottom bottom",
-                scrub: false,
-                markers: false,
-            }
-        })
-    }
-    
-}
-
-function horizontalLoop(textClass, direction) {
-    const element = document.querySelectorAll(textClass)[0]
-    if (element) {
-        const elementWidth = element.offsetWidth;
-        const screenWidth = window.screen.width;
-        const speed = 100;
-        const percentageMovement = direction * (-100)
-    
-        let tween = gsap.to(textClass, 
-            {
-                xPercent: percentageMovement, 
-                repeat: -1, 
-                duration: 10, 
-                ease: "linear"
-            }).totalProgress(0.5);
-                
-    }
-}
 
 // --- APPLYING ANIMATIONS --- //
 window.addEventListener('DOMContentLoaded', () => {
-    textDropMain('main-title', 1);
+    textDropMain('main-title', 0.5);
     textDrop('projects-title', 1, '#projects-title');
     textDrop('skills-title', 1, '#skills-title');
-    projectPreviewSlide('.project-preview', 2, '#projects');
+    textDrop('contact-title', 1, '#contact-title');
+    
    //mainTitleHorRotation('#outline-fname-01');
    horizontalLoop(".outline-container", 1)
    horizontalLoop(".outline-container2", -1)

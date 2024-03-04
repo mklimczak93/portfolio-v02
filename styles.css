@@ -150,6 +150,8 @@ h1, h2, h3, h6{
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    /* slightly bigger height for animation in later section */
+    min-height: 100svh;
 }
 .sub-section {
     /* margin for navbar */
@@ -168,9 +170,7 @@ h1, h2, h3, h6{
 
   /* Medium devices / tablets 770 - 1030 width*/
   @media only screen and (max-width: 1030px) {
-    #cursor, #cursor-border {
-        display: none;
-    }
+    
   }
   /* Medium devices / tablets 770 - 1030 width*/
   @media only screen and (max-width: 1030px) {
@@ -317,6 +317,7 @@ h1, h2, h3, h6{
 }
 .single-letter, .single-letter2 {
     position: relative;
+    margin-right: 5px;
     top: 7rem;
 }
 .main-title-div {
@@ -447,6 +448,10 @@ h1, h2, h3, h6{
     }
 }
 
+.splitted-text1, .splitted-text2 {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
   /* Small devices (phones, 500px and down) */
   @media only screen and (max-width: 500px) {
     .sub-section {
@@ -531,13 +536,15 @@ h1, h2, h3, h6{
 }
 .contact-div {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
 }
-.contact-div h2 {
+.contact-div .overlay {
     position: absolute;
-    top: calc(50%-2.5rem)
+    top: calc(50% - 2.5rem);
+    left: calc(50% - 14rem);
 }
 /* this is for contact image with additional class .outline-text */
 .contact {
