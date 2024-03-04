@@ -41,10 +41,15 @@
             <img class="navbar-logo" src="assets/logos/Logo MK - black.svg">
         </a>
         <div class="hor-line"></div>
-        <div class="main-menu">
-            <a class="navbar-link" href="#projects" data-cursor="pointer2">Projects</a>
-            <a class="navbar-link" href="#skills" data-cursor="pointer2">Skills</a>
-            <a class="navbar-link" href="#contact" data-cursor="pointer2">Contact</a>
+        <div class="hamburger" id="hamburger-1">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+        <div class="main-menu" id="main-menu">
+            <a class="navbar-link" data-cursor="pointer2" onclick="openMainPage('projects')" >Projects</a>
+            <a class="navbar-link" data-cursor="pointer2" onclick="openMainPage('skills')" >Skills</a>
+            <a class="navbar-link" data-cursor="pointer2" onclick="openMainPage('contact')" >Contact</a>
         </div>
     </div>
 
@@ -90,61 +95,6 @@
             <h2 class="main-title sub-title" id="projects-title">Projects</h2>
         </div>
 
-        <!-- <div class="project-preview" id="project-01">
-            <p class="project-number">01</p>
-            <div class="project-title-div">
-                <h3 class="project-title">WineCellar</h3>
-                <div class="tools-div">
-                    <p class="tool-name">JavaScript</p>
-                    <p class="tool-name">React.js</p>
-                    <p class="tool-name">Node.js</p>
-                    <p class="tool-name">MongoDB</p>
-                </div>
-            </div>
-            <img class="open-project-icon" src="assets/icons/icon-upload.svg">
-        </div>
-
-        <div class="project-preview" id="project-01">
-            <p class="project-number">01</p>
-            <div class="project-title-div">
-                <h3 class="project-title">WineCellar</h3>
-                <div class="tools-div">
-                    <p class="tool-name">JavaScript</p>
-                    <p class="tool-name">React.js</p>
-                    <p class="tool-name">Node.js</p>
-                    <p class="tool-name">MongoDB</p>
-                </div>
-            </div>
-            <img class="open-project-icon" src="assets/icons/icon-upload.svg">
-        </div>
-
-        <div class="project-preview" id="project-01">
-            <p class="project-number">01</p>
-            <div class="project-title-div">
-                <h3 class="project-title">WineCellar</h3>
-                <div class="tools-div">
-                    <p class="tool-name">JavaScript</p>
-                    <p class="tool-name">React.js</p>
-                    <p class="tool-name">Node.js</p>
-                    <p class="tool-name">MongoDB</p>
-                </div>
-            </div>
-            <img class="open-project-icon" src="assets/icons/icon-upload.svg">
-        </div>
-
-        <div class="project-preview" id="project-01">
-            <p class="project-number">04</p>
-            <div class="project-title-div">
-                <h3 class="project-title">WineCellar</h3>
-                <div class="tools-div">
-                    <p class="tool-name">JavaScript</p>
-                    <p class="tool-name">React.js</p>
-                    <p class="tool-name">Node.js</p>
-                    <p class="tool-name">MongoDB</p>
-                </div>
-            </div>
-            <img class="open-project-icon" src="assets/icons/icon-upload.svg">
-        </div> -->
 
         <!-- <img class="preview-image" src="assets/projects_photos/WineCellar/01. Home page.JPG"> -->
     </div>
@@ -186,9 +136,14 @@
     <div class="sub-section" id="contact">
         <div class="contact-div">
             <img class="outline-text contact" src="assets/text_outlines/Text outline - Contact.svg">
+            <img class="outline-text contact mobile-only" src="assets/text_outlines/Text outline - Contact.svg">
             <h2 class="main-title">Magda Klimczak</h2>
             <a href="mailto:magdalena.b.klimczak@gmail.com" class="regular-button contact-button" data-cursor="pointer2">Contact</a>
         </div>  
+    </div>
+
+    <!-- PROJECT INFO -->
+    <div class="sub-section project-info" id="project-full-info">
     </div>
 
     <!-- Footer -->
