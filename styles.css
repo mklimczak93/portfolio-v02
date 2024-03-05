@@ -648,6 +648,7 @@ h1, h2, h3, h6{
     position: relative;
 }
 .project-main-information {
+    align-self: center;
     display: flex;
     flex-direction: column;
     margin: 0px 50px;
@@ -698,6 +699,9 @@ h1, h2, h3, h6{
     object-fit: contain;
     width: 100%;
     height: auto;
+    align-self: center;
+}
+.project-main-video {
     align-self: center;
 }
 
