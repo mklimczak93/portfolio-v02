@@ -1,8 +1,8 @@
 [
         {
             "id": 1,
-            "projectName": "WineCellar",
-            "projectNameSplitted": "Wine.Cellar",
+            "projectName": "Winecellar",
+            "projectNameSplitted": "Wine.cellar",
             "projectOneLiner": "Wine collection application",
             "projectTools": ["React.js", "Node.js", "JavaScript", "MongoDB", "HTML", "CSS"],
             "projectDescription": "A virtual wine cellar application that allows user to store wine information & photos in their private online cellar, as well as search the web for best prices of chosen wine using custom wine finder tool.",
@@ -25,12 +25,12 @@
                 ],
             "projectGithubLink": "https://github.com/mklimczak93/the-wine-cellar-public",
             "projectYoutubeLink": "https://youtu.be/id2rgIQr38Y",
-            "imagesSourceFolder": "./assets/project_photos/WineCellar"
+            "imagesSourceFolder": "./assets/project_photos/Winecellar"
         },
         {
             "id": 2,
-            "projectName": "FlexFit",
-            "projectNameSplitted": "Flex.Fit",
+            "projectName": "Flexfit",
+            "projectNameSplitted": "Flex.fit",
             "projectOneLiner": "Flexible sport classes booking app",
             "projectTools": ["JavaScript", "Python", "Django", "HTML5", "CSS3"],
             "projectDescription": "Flexfit is a sport classes booking application - inspired by ClassPass, an app that I have used often while living in Amsterdam and found it missing back in Warsaw. It is a platform offering its services to both everyday sport enjoyers and sport studio owners. On one hand it allows to search for the sport classes offered in the area, on the other hand – to promote various activities presented by the studios. It was built from scratch, both frontend and backend, as a final assignment for the CS50WEB.",
@@ -71,8 +71,8 @@
         },
         {
             "id": 3,
-            "projectName": "MinWin",
-            "projectNameSplitted": "Min.Win",
+            "projectName": "Minwin",
+            "projectNameSplitted": "Min.win",
             "projectOneLiner": "Vintage furniture bidding app",
             "projectTools": ["Python", "Django", "HTML5", "CSS3"],
             "projectDescription": "Vintage furniture e-commerce auction site that allows users to post auction listings, place bids on listings, comment on those listings, and add listings to a watchlist.",
