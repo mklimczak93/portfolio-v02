@@ -25,7 +25,7 @@
                 ],
             "projectGithubLink": "https://github.com/mklimczak93/the-wine-cellar-public",
             "projectYoutubeLink": "https://youtu.be/id2rgIQr38Y",
-            "imagesSourceFolder": "assets/project_photos/WineCellar"
+            "imagesSourceFolder": "./assets/project_photos/WineCellar"
         },
         {
             "id": 2,
@@ -67,7 +67,7 @@
                 ],
             "projectGithubLink": "https://github.com/mklimczak93/flexfit.git",
             "projectYoutubeLink": "https://youtu.be/Ed9B-PfPLDM",
-            "imagesSourceFolder": "assets/project_photos/Flexfit"
+            "imagesSourceFolder": "./assets/project_photos/Flexfit"
         },
         {
             "id": 3,
@@ -95,7 +95,7 @@
                 ],
             "projectGithubLink": "https://github.com/mklimczak93/minwin.git",
             "projectYoutubeLink": "https://youtu.be/XOX7TVuVSpI",
-            "imagesSourceFolder": "assets/project_photos/Minwin"
+            "imagesSourceFolder": "./assets/project_photos/Minwin"
         },
         {
             "id": 4,
@@ -125,6 +125,6 @@
                 ],
             "projectGithubLink": "https://github.com/mklimczak93/runner.git",
             "projectYoutubeLink": "https://youtu.be/fnG5GaX7XxQ",
-            "imagesSourceFolder": "assets/project_photos/Runner"
+            "imagesSourceFolder": "./assets/project_photos/Runner"
         }
 ]
