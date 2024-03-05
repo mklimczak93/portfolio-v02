@@ -553,8 +553,12 @@ h1, h2, h3, h6{
 }
 .contact-div .overlay {
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
     top: calc(50% - 2.5rem);
-    left: calc(50% - 14rem);
+    left: calc(50% - 300px);
 }
 /* this is for contact image with additional class .outline-text */
 .contact {
@@ -614,6 +618,7 @@ h1, h2, h3, h6{
     bottom: 0px;
     padding: 20px;
     border-top: 1px solid var(--main-text-color);
+    height: 50px;
 }
 
 .footer-text {
@@ -753,7 +758,7 @@ h1, h2, h3, h6{
     display: flex;
     position: absolute;
     z-index: 10;
-    min-height: 200svh;
+    min-height: 150svh;
     height: 100%;
     width: 100%;
     top: 0;

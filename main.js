@@ -92,10 +92,14 @@ window.addEventListener('DOMContentLoaded', () => {
     const hamMenu = document.getElementById('hamburger-1');
     const openableMenu = document.getElementById('main-menu');
     let isMenuClosed = true;
+    //always open for tablet/desktop
+    if(screen.width > 500) {
+        openableMenu.style.display = "flex";
+    } else {
+        openableMenu.style.display = "none";
+    }
     hamMenu.onclick = function() {
-        if(screen.width > 500) {
-            openableMenu.style.display = "flex";
-        } else if (isMenuClosed) {
+        if (isMenuClosed) {
             hamMenu.classList.toggle("is-active");
             openableMenu.style.display = "flex";
             isMenuClosed = false;
@@ -365,8 +369,11 @@ function pageTransition() {
 
 
 // --- OPEN MAIN PAGE ---//
-function openMainPage(section) {
-    pageTransition()
+function openMainPage(sectionId) {
+    if (window.screen.width > 1030 ) {
+        pageTransition()
+    }
+    
     //if (document.getElementById('project-full-info').style.display === "flex") {
         document.getElementById('home').style.display = "flex";
         document.getElementById('projects').style.display = "flex";
@@ -375,16 +382,35 @@ function openMainPage(section) {
         document.getElementById('project-full-info').style.display = "none";
     //};
     slowShowUp('#home', 2)
-    window.scrollTo(0, 0);
+    document.getElementById(sectionId).scrollIntoView();
+    //window.scrollTo(0, 0);
     
 };
+
+function openMainPageTransition() {
+    if (window.screen.width > 1030 ) {
+        pageTransition()
+    }
+
+    document.getElementById('home').style.display = "flex";
+    document.getElementById('projects').style.display = "flex";
+    document.getElementById('skills').style.display = "flex";
+    document.getElementById('contact').style.display = "flex";
+    document.getElementById('project-full-info').style.display = "none";
+
+    slowShowUp('#home', 2)
+    window.scrollTo(0, 0);
+}
 
 
 // --- PROJECT DETAILED PAGE
 function openProjectPage(project) {
     //const NewWindow = window.open('./project.html',"_self");
     //NewWindow.onload = () => {}
-    pageTransition()
+
+    if (window.screen.width > 1030 ) {
+        pageTransition()
+    }
     window.scrollTo(0, 0);
     document.getElementById('home').style.display = "none";
     document.getElementById('projects').style.display = "none";
@@ -445,7 +471,7 @@ function openProjectPage(project) {
             Your browser does not support the video tag.
         </video>
         <a href=${project.projectGithubLink} class="regular-button page-visit" data-cursor="pointer2">Github source code</a>
-        <button class="regular-button" data-cursor="pointer2" onclick="openMainPage('projects')" >Go back</button>
+        <button class="regular-button" data-cursor="pointer2" onclick="openMainPageTransition()" >Go back</button>
         `;
         mainDiv.appendChild(projectInfoDiv);
 
@@ -570,17 +596,18 @@ window.addEventListener('DOMContentLoaded', () => {
    horizontalLoop(".outline-container", 1);
    horizontalLoop(".outline-container2", -1);
    objectSlideIn('.skills-div-subgroup', '#skills');
+
    //scrolling events
    let lastScrollTop = document.documentElement.scrollTop;
    document.addEventListener("scroll", function(){
     const scrollTopPosition = document.documentElement.scrollTop;
     if (scrollTopPosition > lastScrollTop) {
-        console.log('scrolling down');
+        //console.log('scrolling down');
         // floatUp('#projects', 30, 1);
         // floatUp('#skills', 30, 1);
         // floatUp('#contact', 30, 1);
       } else if (scrollTopPosition < lastScrollTop) {
-        console.log('scrolling up');
+        //console.log('scrolling up');
         // floatDown('#projects', 30, 1);
         // floatDown('#skills', 30, 1);
         // floatDown('#contact', 30, 1);
