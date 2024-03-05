@@ -62,9 +62,10 @@
     src: url('./assets/fonts/ArticulatCF-Light.otf') format("opentype");;
     font-weight: light;
 }
-
+/* E4DFDB;*/
 :root {
     --main-background: #CDC7C2;
+    --transition-color: #E4DFDB;
     --main-text-color:#21242C;
     --title-font: 7rem "Humane", 'sans-serif';
     --paragraph-font: normal 14px 'Articulat', 'sans-serif';
@@ -93,6 +94,10 @@ body {
 	color: var(--main-text-color);
     cursor: none;
     /*cursor: url('./assets/icons/icon-cursor-black.svg'), auto;*/
+}
+.container {
+    padding: 0;
+    margin: 0;
 }
 #cursor {
     position: fixed;
@@ -427,15 +432,17 @@ h1, h2, h3, h6{
     position: absolute;
     right: 0px;
 }
-.preview-image {
+.preview-video {
+    z-index: 10;
     display: none;
-    height: 250px;
+    border-radius: 10px;
+    height: 310px;
     width: 550px;
-    object-fit: cover;
     border-radius: 10px;
     position: absolute;
     left: 50%;
-    top: 125px;
+    top: calc(50% - 155px);
+    overflow: hidden;
 }
 
 .project-preview:hover {
@@ -449,7 +456,7 @@ h1, h2, h3, h6{
 }
 
 .splitted-text1, .splitted-text2 {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
   /* Small devices (phones, 500px and down) */
@@ -511,6 +518,9 @@ h1, h2, h3, h6{
 .skills-div-subgroup {
     width: 40svw;
     margin-bottom: 70px;
+    /* for gsap anim */
+    opacity: 1;
+    clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%);
 }
 .skills-div-subgroup p {
     font: var(--paragraph-font);
@@ -694,7 +704,7 @@ h1, h2, h3, h6{
 /* also regular-button */
 .page-visit {
     align-self: center;
-    margin: 100px 0px;
+    margin: 100px 0px 0px 0px;
 }
 
 /* Medium devices / tablets 770 - 1030 width*/
@@ -732,10 +742,32 @@ h1, h2, h3, h6{
     }
 }
 
-
+/* ----------------------------------------------------------------------------------- */
+/* --- --- --- --- --- --- --- --- --- TRANSITIONS --- --- --- --- --- --- --- --- --- */
+/* ----------------------------------------------------------------------------------- */
+.transition {
+    display: flex;
+    position: absolute;
+    z-index: 10;
+    min-height: 200svh;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    pointer-events: none;
+    list-style-type: none;
+}
+.transition li {
+    transform: scaleY(0);
+    background-color: var(--transition-color);
+    width: 20%;
+}
 /* ------------------------------------------------------------------------------ */
 /* --- --- --- --- --- --- --- --- --- OTHERS --- --- --- --- --- --- --- --- --- */
 /* ------------------------------------------------------------------------------ */
+
 
 
 /* --- SCROLLBAR --- */
