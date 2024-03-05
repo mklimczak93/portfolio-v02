@@ -204,7 +204,7 @@ function showProjectPreview(projectName) {
         divElement.innerHTML = 
         `
         <video width="100%" height="auto" autoplay loop playsinline muted>
-            <source src="assets/projects_photos/${projectName}/${projectName}_movie.mp4" type="video/mp4">
+            <source src="./assets/projects_photos/${projectName}/${projectName}_movie_short.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         `;
@@ -403,16 +403,16 @@ function openProjectPage(project) {
         titleDiv.innerHTML =
         `
             <div class="outline-container">
-                <img class="outline-text" src="assets/text_outlines/Text outline - ${project.projectName}.svg">
+                <img class="outline-text" src="./assets/text_outlines/Text outline - ${project.projectName}.svg">
             </div>
             <div class="outline-container">
-                <img class="outline-text" src="assets/text_outlines/Text outline - ${project.projectName}.svg">
+                <img class="outline-text" src="./assets/text_outlines/Text outline - ${project.projectName}.svg">
             </div>
             <div class="outline-container">
-                <img class="outline-text" src="assets/text_outlines/Text outline - ${project.projectName}.svg">
+                <img class="outline-text" src="./assets/text_outlines/Text outline - ${project.projectName}.svg">
             </div>
             <div class="outline-container">
-                <img class="outline-text" src="assets/text_outlines/Text outline - ${project.projectName}.svg">
+                <img class="outline-text" src="./assets/text_outlines/Text outline - ${project.projectName}.svg">
             </div>
             <div class="main-title-div">
                 <p class="paragraph sub-title-number">Project 0${project.id}</p>
@@ -433,15 +433,15 @@ function openProjectPage(project) {
         <p class="paragraph">
             ${project.projectDescription}
         </p>
-        <img class="project-main-image" src="assets/projects_photos/${project.projectName}/${project.projectName}_overview.png">
+        <img class="project-main-image" src="./assets/projects_photos/${project.projectName}/${project.projectName}_overview.png">
         <p class="paragraph bolder">
             Main functionalities of the application:
         </p>
         <div id="functionalities-div">
 
         </div>
-        <video width="100%" height="auto" autoplay loop playsinline muted>
-            <source src="assets/projects_photos/${project.projectName}/${project.projectName}_movie.mp4" type="video/mp4">
+        <video class="project-main-video" width="100%" height="auto" autoplay loop playsinline muted>
+            <source src="./assets/projects_photos/${project.projectName}/${project.projectName}_movie_short.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <a href=${project.projectGithubLink} class="regular-button page-visit" data-cursor="pointer2">Github source code</a>
@@ -532,7 +532,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                        
                     </div>
                 </div>
-                <img class="open-project-icon" src="assets/icons/icon-upload.svg">
+                <img class="open-project-icon" src="./assets/icons/icon-upload.svg">
             `
             projectsPreviewsContainer.appendChild(newDiv);
     
